@@ -1,0 +1,34 @@
+/* Estilo para os links dentro da barra de navegação */
+.link {
+  color: rgb(204, 184, 147); /* Cor do texto do link */
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  margin: 0px 10px; /* Espaçamento lateral entre os links */
+  position: relative; /* Necessário para o pseudo-elemento */
+  transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+/* Estilo para os links ao passar o mouse */
+.link:hover {
+  color: red; /* Muda a cor do texto para vermelho ao passar o mouse */
+}
+
+.link:hover::after {
+  background-color: red; /* Muda a cor do sublinhado para vermelho ao passar o mouse */
+}
+
+/* Animação de sublinhado */
+.link::after {
+  content: ''; /* Adiciona um pseudo-elemento vazio */
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Ajuste a posição do sublinhado */
+  width: 0;
+  height: 2px; /* Espessura do sublinhado */
+  background-color: rgb(204, 184, 147); /* Cor do sublinhado */
+  transition: width 0.3s ease; /* Transição suave para o sublinhado */
+}
+
+/* Animação ao passar o mouse */
+.link:hover::after {
+  width: 100%; /* Faz o sublinhado crescer até a largura total do link */
+}
