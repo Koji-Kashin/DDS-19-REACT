@@ -8,6 +8,7 @@ import Login from "./pages/Login.jsx";
 import Contato from "./pages/Contato.jsx";
 import Cadastro from "./pages/Cadastro.jsx";
 import Sobre from "./pages/Sobre.jsx";
+import InfoCard from "./components/InfoCard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,17 +29,22 @@ const router = createBrowserRouter([
         element: <Contato />,
       },
       {
-        path: "cadastro",
-        element: <Cadastro />,
+        path: "/informacao/:id",
+        element: <InfoCard />,
       },
       {
         path: "sobre",
         element: <Sobre />,
       },
       {
+        path: "cadastro",
+        element: <Cadastro />,
+      },
+
+      {
         path: "/PaginaErro",
         element: <PaginaErro />,
-      }
+      },
     ],
   },
 ]);

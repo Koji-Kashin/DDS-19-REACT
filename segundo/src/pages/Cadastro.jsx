@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Form } from "react-router-dom";
+import Forms from "../components/Forms";
 
 const Cadastro = () => {
   return (
-    <div>Cadastro</div>
-  )
-}
+    <div>
 
-export default Cadastro
+      <h4>
+        Cadastro
+        <Forms />
+      </h4>
+
+    </div>
+  );
+};
+
+export default Cadastro;
