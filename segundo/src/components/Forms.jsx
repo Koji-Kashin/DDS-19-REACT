@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Forms.module.css";
 
-const Forms = () => {
-  const [nome, setNome] = useState();
-  const [email, setEmail] = useState();
-  const [senha, setSenha] = useState();
+const Forms = (props) => {
+  const [nome, setNome] = useState(props ? props.nome : "");
+  const [email, setEmail] = useState(props ? props.email : "");
+  const [senha, setSenha] = useState(props ? props.senha : "");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,6 +26,7 @@ const Forms = () => {
           id="nome"
           placeholder="Digite seu nome"
           onChange={handleName}
+          value={nome}
         />
         <label>
           <span>E-mail:</span>
@@ -36,6 +37,7 @@ const Forms = () => {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            value={email}
           />
         </label>
 
@@ -48,6 +50,7 @@ const Forms = () => {
             onChange={(e) => {
               setSenha(e.target.value);
             }}
+            value={senha}
           />
         </label>
         <input
